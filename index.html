@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel='stylesheet' href="./src/stylesheet/netflix.css" />
+   
+
+   <title>Netflix Clone</title>
+
+</head>
+
+   <nav id="nav">
+
+      <img src='./src/images/netflix.png' class="netflix_logo" alt="netflix_logo" />
+
+      <div class="nav_links">
+        <ul>
+          <li id="home">Home</li>
+          <li><a href="./Watchlist.html">Watchlist</a></li>
+          <li>Movies</li>
+          <li>TV shows</li>
+        </ul>
+      <img src='./src/images/Netflix-avatar.png' class="avatar_logo" alt="avatar_logo" />
+      </div>
+
+   </nav>
+
+   <div id="app">
+
+      <div class="banner">
+         <div class="banner_content">
+            <h1 class="banner_title">Prey</h1>
+            <div class="banner_buttons">
+               <button class="banner_button">Play</button>
+               <button class="banner_button">My List</button>
+            </div>
+            <div class="banner_descript">
+               Naru, a skilled warrior of the Comanche Nation, fights to protect her tribe against one of the first highly-evolved Predators to land on Earth.
+            </div>
+         </div>
+         <!-- <div class="banner_fade">
+         </div> -->
+      </div>
+
+      <body>
+         
+            <div class="row">
+
+               <h2>Coming Soon</h2>
+
+               <div class="row_posters">
+
+                  <div
+                     v-for="movie in comingSoonList"
+                     :id="movie.id"
+                     :class="movie.movieName"
+                     :alt="movie.movieName">
+
+                     <div class="card_details_new">
+
+                        <button
+                           type="button"
+                           class="add_button"
+                           @click="addtoWatchList(comingSoonList[index])"
+                           href="./Watchlist.html"
+                        >
+                        <i class="fa fa-plus"></i>
+         
+                        </button>
+         
+                        <img class="upcomingImg" :src="movie.poster" />
+         
+                     </div>
+
+               </div>
+
+            </div>
+
+         </div>
+
+         <div class="row">
+
+            <h2>Action</h2>
+
+               <div class="row_posters">
+
+                  <div 
+                     v-for="(movie, index) in actionList.slice(0, 8)"
+                     :id="movie.id"
+                     :class="movie.movieName"
+                     :alt="movie.movieName">
+
+                     <div class="card_details">
+
+                        <button
+                        type="button"
+                        class="add_button"
+                        @click="addtoWatchList(actionList[index])"
+                        href="./Watchlist.html"
+                        >
+                        <i class="fa fa-plus"></i>
+
+                        </button>
+
+                        <img class="all_img" :src="movie.poster" />
+
+                     </div>
+
+                  </div>
+
+               </div>
+
+         </div>
+
+         <div class="row">
+
+            <h2>Comedy</h2>
+
+               <div class="row_posters">
+
+                  <div 
+                     v-for="(movie, index) in comedyList.slice(0, 8)"
+                     :id="movie.id"
+                     :class="movie.movieName"
+                     :alt="movie.movieName">
+
+                     <div class="card_details">   
+
+                        <button
+                           type="button"
+                           class="add_button"
+                           @click="addtoWatchList(comedyList[index])"
+                           href="./Watchlist.html"
+                           >
+                           <i class="fa fa-plus"></i>
+
+                        </button>
+
+                        <img class="all_img" :src="movie.poster" />
+
+                     </div>
+
+                  </div>
+
+               </div>
+
+            </div>
+
+            <div class="row">
+
+               <h2>Animation</h2>
+
+                  <div class="row_posters">
+
+                     <div 
+                        
+                        v-for="(movie, index) in animationList.slice(0,8)"
+                        :id="movie.id"
+                        :class="movie.movieName"
+                        :alt="movie.movieName">
+
+                     <div class="card_details">
+
+                        <button
+                           type="button"
+                           class="add_button"
+                           @click="addtoWatchList(animationList[index])"
+                           href="./Watchlist.html"
+                        >
+                        <i class="fa fa-plus"></i>
+
+                        </button>
+                        
+                        <img class="all_img" :src="movie.poster" />
+
+                     </div>
+
+                  </div>
+
+                  </div>
+
+            </div>
+
+            <div class="row">
+
+               <h2>Horror</h2>
+
+                  <div class="row_posters">
+
+                     <div 
+                        v-for="(movie, index) in horrorList.slice(0, 8)"
+                        :id="movie.id"
+                        :class="movie.movieName"
+                        :alt="movie.movieName">
+
+                        <div class="card_details">
+
+                        <button
+                           type="button"
+                           class="add_button"
+                           @click="addtoWatchList(horrorList[index])"
+                           href="./Watchlist.html"
+                        >
+                        <i class="fa fa-plus"></i>
+
+                        </button>
+
+                        <img class="all_img" :src="movie.poster" />
+
+                     </div>
+
+                  </div>
+
+                  </div>
+
+            </div>
+
+         <script src="https://unpkg.com/vue@3" defer></script>
+         <script
+         src="https://kit.fontawesome.com/e4ad388285.js"
+         crossorigin="anonymous"
+         defer
+         ></script>
+         <script src="/src/javascript/Main.js" type="module"></script>
+
+         <script src='/src/javascript/nav.js'></script>
+
+      </body>  
+
+          <!-- LINKS -->
+    <section class="link">
+      <div class="logos">
+        <a href="#"><i class="fab fa-facebook-square fa-2x logo"></i></a>
+        <a href="#"><i class="fab fa-instagram fa-2x logo"></i></a>
+        <a href="#"><i class="fab fa-twitter fa-2x logo"></i></a>
+        <a href="#"><i class="fab fa-youtube fa-2x logo"></i></a>
+      </div>
+      <div class="sub-links">
+        <ul>
+          <li><a href="#">Audio and Subtitles</a></li>
+          <li><a href="#">Audio Description</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Gift Cards</a></li>
+          <li><a href="#">Media Center</a></li>
+          <li><a href="#">Investor Relations</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Legal Notices</a></li>
+          <li><a href="#">Corporate Information</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </section>
+    <!-- END OF LINKS -->
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy 1997-2022 Netflix, Inc.</p>
+      <p>Kelsy Ohlsson &copy 2022</p>
+    </footer>
+    
+   </div>
+</html>
